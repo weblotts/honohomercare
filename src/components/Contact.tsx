@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Link from "next/link";
 
 const inputCls = "w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-purple focus:ring-1 focus:ring-purple/20 transition-colors bg-white";
 
@@ -103,7 +104,7 @@ export default function Contact() {
               </div>
 
               <p className="text-xs text-gray-400">
-                By submitting you agree to our <a href="/privacy" className="underline hover:text-gray-600">Privacy Policy</a>.
+                By submitting you agree to our <Link href="/privacy" className="underline hover:text-gray-600">Privacy Policy</Link>.
                 Your information is strictly confidential.
               </p>
 
