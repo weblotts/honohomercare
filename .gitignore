@@ -3,6 +3,7 @@ node_modules
 .env.local
 .env.production
 .next
+/out
 dist
 *.tsbuildinfo
 .turbo
