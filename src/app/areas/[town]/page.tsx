@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: { params: { town: string } })
   const url = `${BASE_URL}/areas/${town.slug}`;
   return {
     title: `In-Home Dementia Care in ${town.name}, MA`,
-    description: `Honor Home Care provides specialist in-home dementia and Alzheimer's care in ${town.name}, ${town.county}, Massachusetts. Certified caregivers, RN supervision, MassHealth accepted — call (508) 665-3872.`,
+    description: `Honor Home Care provides specialist in-home dementia and Alzheimer's care in ${town.name}, ${town.county}, Massachusetts. Certified caregivers, RN supervision, flexible private-pay options — call (508) 665-3872.`,
     alternates: { canonical: url },
     openGraph: {
       title: `Dementia Home Care in ${town.name}, MA | Honor Home Care`,
-      description: `Specialist in-home dementia care for families in ${town.name}, ${town.county}. Certified caregivers, RN supervision, MassHealth accepted.`,
+      description: `Specialist in-home dementia care for families in ${town.name}, ${town.county}. Certified caregivers, RN supervision, flexible private-pay options.`,
       url,
       images: [{ url: `${BASE_URL}/images/caretaker-elderly.jpg`, width: 1200, height: 630 }],
     },
@@ -126,7 +126,7 @@ export default function TownPage({ params }: { params: { town: string } }) {
               <p className="text-sm text-gray-500 leading-relaxed mb-6">
                 Every caregiver we place in {town.name} completes our 80-hour Dementia Care
                 Certification and is supervised monthly by a registered nurse. We also work
-                directly with MassHealth, long-term care insurers, and Veterans' benefits programs
+                with long-term care insurers and offer flexible private-pay options
                 so your family can focus on what matters most.
               </p>
               <div className="grid grid-cols-3 gap-4 border-t border-gray-100 pt-6">
@@ -185,7 +185,7 @@ export default function TownPage({ params }: { params: { town: string } }) {
                   { title: "Consistent caregivers", desc: "Same trusted caregiver every visit — especially important for those with dementia." },
                   { title: "RN-supervised care",    desc: "A registered nurse reviews every care plan and conducts monthly home visits." },
                   { title: "Family kept informed",  desc: "Regular updates so you always know how your loved one is doing." },
-                  { title: "MassHealth accepted",   desc: `We help ${town.name} families access every available funding source.` },
+                  { title: "Flexible payment options", desc: `Private pay and long-term care insurance accepted — we help ${town.name} families understand their options.` },
                 ].map((item) => (
                   <li key={item.title} className="flex gap-3">
                     <span className="text-purple font-bold text-sm flex-shrink-0 mt-0.5">✓</span>

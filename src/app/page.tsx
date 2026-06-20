@@ -13,21 +13,39 @@ export const metadata: Metadata = {
 const featuredServices = [
   {
     n: "01",
-    title: "Memory Care Support",
-    desc: "Structured routines, cognitive stimulation, and therapeutic engagement tailored to each stage of Alzheimer's and dementia.",
-    href: "/services#memory-care",
+    title: "Alzheimer's & Dementia Care",
+    desc: "Trained caregivers supporting routines, safety, memory challenges, wandering risk, meals, hygiene, and companionship — at every stage.",
+    href: "/services/alzheimers-care",
   },
   {
     n: "02",
-    title: "Personal Care & Daily Living",
-    desc: "Respectful, dignified assistance with daily activities — bathing, dressing, mobility, and nutrition — in the comfort of your loved one's own home.",
-    href: "/services#personal-care",
+    title: "Live-In & Overnight Care",
+    desc: "Extended daily support and overnight supervision in the comfort of home. Meal prep, fall prevention, medication reminders, and around-the-clock peace of mind.",
+    href: "/services/live-in-care",
   },
   {
     n: "03",
-    title: "Overnight & 24-Hour Care",
-    desc: "Round-the-clock supervision for individuals with sundowning, wandering, or complex care needs — available across Massachusetts.",
-    href: "/services#overnight",
+    title: "Private Pay Care",
+    desc: "Flexible, no-waitlist care for families who want reliable support on their schedule — without program restrictions or eligibility delays.",
+    href: "/services/private-pay",
+  },
+  {
+    n: "04",
+    title: "Long-Term Care Insurance",
+    desc: "Some policies may help cover in-home care costs. We can discuss your care needs and what information your insurer may request.",
+    href: "/services/long-term-care-insurance",
+  },
+  {
+    n: "05",
+    title: "Concierge Services",
+    desc: "Premium, discreet support for seniors and families — errands, appointments, companionship, family updates, and personalized care coordination.",
+    href: "/services/concierge",
+  },
+  {
+    n: "06",
+    title: "Care in Assisted Living",
+    desc: "Extra one-on-one support inside assisted living communities — for residents who need more personal attention than the community provides.",
+    href: "/services/assisted-living",
   },
 ];
 
@@ -44,7 +62,7 @@ export default function HomePage() {
             <div>
               <p className="text-[11px] font-semibold tracking-[3px] uppercase text-primary mb-3">What We Offer</p>
               <h2 className="font-serif text-[clamp(30px,4vw,46px)] text-base-content leading-[1.1]">
-                Specialist Dementia Care<br />Across Massachusetts
+                Personalized Home Care<br />for Seniors and Families
               </h2>
             </div>
             <Link href="/services"
@@ -53,7 +71,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {featuredServices.map((s) => (
               <Link key={s.n} href={s.href}
                 className="card bg-base-100 border border-base-300 shadow-none hover:border-primary/30 hover:shadow-sm transition-all duration-200 group">
@@ -195,14 +213,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── MA Insurance note ── */}
+      {/* ── Trust points ── */}
       <section className="py-16 bg-base-200 border-y border-base-300">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { title: "MassHealth / Medicaid", desc: "Many of our services are covered under MassHealth waiver programs. Our team will review your eligibility at no charge." },
-              { title: "Long-Term Care Insurance", desc: "We work directly with Massachusetts long-term care insurers to streamline claims and billing on your behalf." },
-              { title: "Veterans' Benefits (VA)", desc: "Massachusetts veterans may qualify for in-home care support through VA programs. We help navigate the process." },
+              { title: "Compassionate Caregivers", desc: "Every caregiver is carefully matched to your loved one and supervised by a registered nurse throughout their care." },
+              { title: "Personalized Care Plans", desc: "No two people are alike. Every care plan is built around the individual — their routines, preferences, and stage of need." },
+              { title: "Flexible Care Options", desc: "Hourly, daily, live-in, or concierge — we adapt to what your family needs, when you need it, without long-term contracts." },
             ].map((item) => (
               <div key={item.title} className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">

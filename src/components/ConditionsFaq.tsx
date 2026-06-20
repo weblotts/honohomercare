@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   { q: "How quickly can care begin?", a: "In most cases within 24–48 hours of completing an assessment. For urgent situations we can sometimes arrange care the same day." },
   { q: "What if we're not satisfied with our caregiver?", a: "We'll find a replacement promptly — typically within 48 hours. We guarantee a good fit." },
-  { q: "Does MassHealth or insurance cover your services?", a: "Many services are covered under MassHealth waiver programs, long-term care insurance, and VA benefits. Our team will review your eligibility at no charge." },
+  { q: "Does insurance cover your services?", a: "Some families use long-term care insurance to help cover home care costs. We encourage families to review their policy and speak with their insurer. Our team can discuss care needs and help you understand what information your insurer may request." },
   { q: "How do you handle behavioral symptoms like wandering?", a: "Our caregivers are trained in non-pharmacological approaches — de-escalation, redirection, structured routines, and environmental modifications." },
   { q: "Can you provide care in an assisted living facility?", a: "Yes — we offer supplemental one-on-one care in assisted living and memory care facilities across Massachusetts." },
 ];

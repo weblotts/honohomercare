@@ -1,20 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const NAV_LINKS = [
-  { label: "About",      href: "/about" },
-  { label: "Services",   href: "/services" },
-  { label: "How It Works", href: "/services#how-it-works" },
-  { label: "Our Team",   href: "/team" },
-  { label: "Contact",    href: "/contact" },
+const TOP_NAV_LINKS = [
+  { label: "Services",               href: "/services" },
+  { label: "Alzheimer's Care",       href: "/services/alzheimers-care" },
+  { label: "Live-In Care",           href: "/services/live-in-care" },
+  { label: "Private Pay",            href: "/services/private-pay" },
+  { label: "Long-Term Care Insurance", href: "/services/long-term-care-insurance" },
+  { label: "About",                  href: "/about" },
+  { label: "Contact",                href: "/contact" },
+];
+
+const SERVICE_DROPDOWN = [
+  { label: "Dementia Care",                    href: "/services/alzheimers-care" },
+  { label: "Personal Care",                    href: "/services#personal-care" },
+  { label: "Companion Care",                   href: "/services#respite" },
+  { label: "Concierge Services",               href: "/services/concierge" },
+  { label: "Care in Assisted Living Communities", href: "/services/assisted-living" },
+  { label: "Respite Care",                     href: "/services#respite" },
+  { label: "Overnight Care",                   href: "/services#overnight" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -22,7 +37,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const close = () => setMenuOpen(false);
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const close = () => {
+    setMenuOpen(false);
+    setMobileServicesOpen(false);
+  };
 
   return (
     <>
@@ -48,24 +76,50 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop nav links */}
-            <ul
-              className="hidden md:flex items-center gap-8 list-none"
-              role="list"
-            >
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm font-medium text-[var(--text-mid)] hover:text-primary transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+            <ul className="hidden lg:flex items-center gap-6 list-none" role="list">
+              {TOP_NAV_LINKS.map((link) =>
+                link.label === "Services" ? (
+                  <li key={link.href} ref={dropdownRef} className="relative">
+                    <button
+                      onClick={() => setServicesOpen((o) => !o)}
+                      className="flex items-center gap-1 text-sm font-medium text-[var(--text-mid)] hover:text-primary transition-colors duration-200"
+                      aria-expanded={servicesOpen}
+                    >
+                      Services
+                      <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {servicesOpen && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white border border-gray-200 rounded-xl shadow-lg py-2 z-50">
+                        <a href="/services" onClick={() => setServicesOpen(false)} className="block px-4 py-2.5 text-sm font-semibold text-primary border-b border-gray-100 mb-1 hover:bg-base-200 transition-colors">
+                          All Services
+                        </a>
+                        {SERVICE_DROPDOWN.map((link) => (
+                          <a
+                            key={link.label}
+                            href={link.href}
+                            onClick={() => setServicesOpen(false)}
+                            className="block px-4 py-2.5 text-sm text-[var(--text-mid)] hover:text-primary hover:bg-base-200 transition-colors"
+                          >
+                            {link.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                ) : (
+                  <li key={link.href}>
+                    <a href={link.href} className="text-sm font-medium text-[var(--text-mid)] hover:text-primary transition-colors duration-200">
+                      {link.label}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
 
             {/* Desktop CTA */}
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4">
               <a
                 href="tel:+15086653872"
                 className="text-sm font-semibold text-primary flex items-center gap-1.5"
@@ -82,26 +136,14 @@ export default function Navbar() {
 
             {/* Hamburger */}
             <button
-              className="md:hidden flex flex-col gap-1.5 p-1 cursor-pointer"
+              className="lg:hidden flex flex-col gap-1.5 p-1 cursor-pointer"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((o) => !o)}
             >
-              <span
-                className={`block w-6 h-0.5 bg-[var(--text-dark)] rounded transition-all duration-300 ${
-                  menuOpen ? "translate-y-2 rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`block w-6 h-0.5 bg-[var(--text-dark)] rounded transition-all duration-300 ${
-                  menuOpen ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`block w-6 h-0.5 bg-[var(--text-dark)] rounded transition-all duration-300 ${
-                  menuOpen ? "-translate-y-2 -rotate-45" : ""
-                }`}
-              />
+              <span className={`block w-6 h-0.5 bg-[var(--text-dark)] rounded transition-all duration-300 ${menuOpen ? "translate-y-2 rotate-45" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-[var(--text-dark)] rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-[var(--text-dark)] rounded transition-all duration-300 ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
             </button>
           </div>
         </div>
@@ -115,17 +157,43 @@ export default function Navbar() {
           aria-label="Mobile navigation"
         >
           <ul className="flex flex-col list-none px-6 py-4">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={close}
-                  className="block py-3 text-base font-medium text-[var(--text-dark)] border-b border-brand-border last:border-0"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {TOP_NAV_LINKS.map((link) =>
+              link.label === "Services" ? (
+                <li key="services">
+                  <button
+                    onClick={() => setMobileServicesOpen((o) => !o)}
+                    className="flex items-center justify-between w-full py-3 text-base font-medium text-[var(--text-dark)] border-b border-brand-border"
+                  >
+                    Services
+                    <svg className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {mobileServicesOpen && (
+                    <ul className="flex flex-col bg-base-200 rounded-lg my-2 overflow-hidden">
+                      <li>
+                        <a href="/services" onClick={close} className="block px-4 py-2.5 text-sm font-semibold text-primary border-b border-base-300">
+                          All Services
+                        </a>
+                      </li>
+                      {SERVICE_DROPDOWN.map((sl) => (
+                        <li key={sl.label}>
+                          <a href={sl.href} onClick={close} className="block px-4 py-2.5 text-sm text-[var(--text-mid)] border-b border-base-300 last:border-0">
+                            {sl.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <a href={link.href} onClick={close} className="block py-3 text-base font-medium text-[var(--text-dark)] border-b border-brand-border last:border-0">
+                    {link.label}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
           <div className="px-6 pb-5">
             <a

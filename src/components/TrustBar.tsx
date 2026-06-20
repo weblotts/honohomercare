@@ -3,7 +3,7 @@ const items = [
   "Dementia-Certified Caregivers",
   "RN-Supervised Care Plans",
   "Alzheimer's Association Partner",
-  "MassHealth Approved Provider",
+  "Serving MA Families Since 2013",
 ];
 
 export default function TrustBar() {

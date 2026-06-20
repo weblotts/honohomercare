@@ -32,8 +32,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Does MassHealth or insurance cover your services?",
-      acceptedAnswer: { "@type": "Answer", text: "Many services are covered under MassHealth waiver programs, long-term care insurance, and VA benefits. Our team will review your eligibility at no charge." },
+      name: "Does insurance cover your services?",
+      acceptedAnswer: { "@type": "Answer", text: "Some families use long-term care insurance to help cover home care costs. We encourage families to review their policy and speak with their insurer. Our team can discuss care needs and help you understand what information your insurer may request." },
     },
     {
       "@type": "Question",

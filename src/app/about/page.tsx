@@ -27,14 +27,14 @@ const certifications = [
   { name: "Massachusetts Licensed",     note: "Fully licensed, insured & bonded in MA" },
   { name: "Alzheimer's Association Partner", note: "MA Chapter certified partner since 2015" },
   { name: "CDP Certified Caregivers",   note: "Certified Dementia Practitioners on every case" },
-  { name: "MassHealth Approved",        note: "Accepted provider under MassHealth waiver programs" },
+  { name: "Flexible Payment Options",   note: "Private pay and long-term care insurance accepted" },
 ];
 
 const milestones = [
   { year: "2013", event: "Honor Home Care founded in Waltham, MA by Dr. Sarah Mitchell and Marcus Johnson, RN — after seeing firsthand the gap in specialist dementia home care across MetroWest." },
   { year: "2015", event: "Became a certified partner of the Alzheimer's Association Massachusetts Chapter. Launched our proprietary 80-hour caregiver certification program." },
   { year: "2017", event: "Expanded service coverage across the Greater Boston area — including Newton, Cambridge, Lexington, Framingham, and Wellesley." },
-  { year: "2019", event: "Approved as a MassHealth waiver provider, making specialist dementia care accessible to more Massachusetts families regardless of financial means." },
+  { year: "2019", event: "Expanded our care model to include live-in care, concierge services, and support inside assisted living communities — serving more Massachusetts families across more care settings." },
   { year: "2021", event: "Reached 300 Massachusetts families served. Introduced 24/7 RN on-call support and launched the HonorHome family app." },
   { year: "2024", event: "Named Best Dementia Care Provider in Greater Boston. Now serving 500+ families across Middlesex, Norfolk, and Worcester counties in Massachusetts." },
 ];
@@ -43,9 +43,7 @@ const partners = [
   "Alzheimer's Association — MA Chapter",
   "MA Executive Office of Elder Affairs (EOEA)",
   "Home Care Alliance of Massachusetts",
-  "MassHealth Waiver Program",
   "Massachusetts General Hospital Memory Clinic",
-  "Veterans Administration — Bedford, MA",
 ];
 
 export default function AboutPage() {

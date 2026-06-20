@@ -28,8 +28,15 @@ export default function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">Services</p>
             <ul className="flex flex-col gap-2.5 text-sm">
-              {["Memory Care", "Personal Care", "Medication Management", "Overnight Care", "Respite Care"].map((s) => (
-                <li key={s}><Link href="/services" className="hover:text-gray-200 transition-colors">{s}</Link></li>
+              {[
+                { label: "Alzheimer's & Dementia Care", href: "/services/alzheimers-care" },
+                { label: "Live-In Care",               href: "/services/live-in-care" },
+                { label: "Private Pay",                href: "/services/private-pay" },
+                { label: "Long-Term Care Insurance",   href: "/services/long-term-care-insurance" },
+                { label: "Concierge Services",         href: "/services/concierge" },
+                { label: "Care in Assisted Living",    href: "/services/assisted-living" },
+              ].map((s) => (
+                <li key={s.label}><Link href={s.href} className="hover:text-gray-200 transition-colors">{s.label}</Link></li>
               ))}
             </ul>
           </div>

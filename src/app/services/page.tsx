@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://honorhome.care/services" },
   openGraph: {
     title: "In-Home Dementia Care Services — Massachusetts",
-    description: "Six specialist services for every stage of dementia, delivered at home across Greater Boston and MetroWest MA. MassHealth accepted.",
+    description: "Specialist in-home care services for seniors and families across Greater Boston and MetroWest MA. Dementia care, live-in care, concierge services, and more.",
     url: "https://honorhome.care/services",
     images: [{ url: "https://honorhome.care/images/caretaker-elderly.jpg", width: 1200, height: 630 }],
   },
@@ -185,27 +185,30 @@ export default function ServicesPage() {
           <div className="max-w-xl mb-14">
             <p className="text-[11px] font-semibold tracking-[3px] uppercase text-primary mb-4">Paying for Care</p>
             <h2 className="font-serif text-[clamp(30px,4vw,46px)] text-base-content leading-[1.1]">
-              Massachusetts Funding Options
+              Paying for Care
             </h2>
             <p className="text-[15px] text-base-content/60 leading-relaxed mt-4">
-              Our care coordinators help every Massachusetts family understand and
-              access every available funding source — at no charge.
+              Our care coordinators can help your family understand the options available
+              and find an approach that fits your needs and budget.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               {
-                title: "MassHealth / Medicaid",
-                desc: "Many of our services are covered under MassHealth waiver programs including the Adult Foster Care (AFC) and Group Adult Foster Care (GAFC) programs. We are an approved MassHealth provider.",
+                title: "Private Pay",
+                desc: "Pay directly for care with full flexibility — no waitlists, no program restrictions, and care that starts on your timeline.",
+                href: "/services/private-pay",
               },
               {
                 title: "Long-Term Care Insurance",
-                desc: "We work directly with Massachusetts long-term care insurers to manage claims, documentation, and billing — reducing the administrative burden on your family.",
+                desc: "Some policies may help cover in-home care costs. We can discuss your care needs and help you understand what information your insurer may request.",
+                href: "/services/long-term-care-insurance",
               },
               {
-                title: "Veterans' Benefits (VA)",
-                desc: "Massachusetts veterans living with dementia may qualify for in-home care support through VA programs. Our team assists with eligibility checks and applications.",
+                title: "Flexible Scheduling",
+                desc: "Hourly, daily, live-in, or concierge — we adapt to your family's needs without long-term contracts or rigid program requirements.",
+                href: "/contact",
               },
             ].map((item) => (
               <div key={item.title} className="card bg-base-200 border border-base-300 shadow-none">
@@ -213,6 +216,7 @@ export default function ServicesPage() {
                   <span className="text-primary font-bold text-xs">✓</span>
                   <h3 className="font-semibold text-[15px] text-base-content">{item.title}</h3>
                   <p className="text-[13px] text-base-content/60 leading-relaxed">{item.desc}</p>
+                  <a href={item.href} className="text-[12px] text-primary font-semibold hover:underline mt-1">Learn more →</a>
                 </div>
               </div>
             ))}

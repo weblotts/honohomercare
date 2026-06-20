@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "Alzheimer's home care Framingham",
     "dementia care Lexington MA",
     "in-home caregiver Wellesley",
-    "MassHealth dementia care",
+    "private pay home care Massachusetts",
     "24 hour dementia care Massachusetts",
   ],
   authors: [{ name: "Honor Home Care" }],
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Honor Home Care | In-Home Dementia Care — Massachusetts",
     description:
-      "Person-centered, specialist in-home dementia care across Greater Boston and MetroWest MA. Certified caregivers, RN supervision, MassHealth accepted. Serving families since 2013.",
+      "Person-centered, specialist in-home dementia care across Greater Boston and MetroWest MA. Certified caregivers, RN supervision, flexible private-pay options. Serving families since 2013.",
     url: BASE_URL,
     siteName: "Honor Home Care",
     locale: "en_US",
@@ -88,7 +88,7 @@ const localBusinessSchema = {
   logo: `${BASE_URL}/logo.png`,
   image: `${BASE_URL}/images/caretaker-elderly.jpg`,
   description:
-    "Specialist in-home dementia and Alzheimer's care across Greater Boston and MetroWest Massachusetts. Licensed, insured, and MassHealth approved since 2013.",
+    "Specialist in-home dementia and Alzheimer's care across Greater Boston and MetroWest Massachusetts. Licensed, insured, and serving families since 2013.",
   telephone: "+1-508-665-3872",
   email: "care@honorhome.care",
   foundingDate: "2013",
