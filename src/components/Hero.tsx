@@ -9,7 +9,7 @@ export default function Hero() {
 
           <div>
             <h1 className="font-serif text-[clamp(36px,5vw,56px)] text-gray-900 leading-tight mb-5">
-              In-Home Dementia Care Across Massachusetts
+              In-Home Dementia Care You Can Trust
             </h1>
             <p className="text-base text-gray-500 leading-relaxed mb-8 max-w-md">
               Compassionate, specialist care for individuals living with Alzheimer&apos;s

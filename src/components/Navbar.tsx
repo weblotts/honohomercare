@@ -5,23 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 const TOP_NAV_LINKS = [
-  { label: "Services",               href: "/services" },
-  { label: "Alzheimer's Care",       href: "/services/alzheimers-care" },
-  { label: "Live-In Care",           href: "/services/live-in-care" },
-  { label: "Private Pay",            href: "/services/private-pay" },
-  { label: "Long-Term Care Insurance", href: "/services/long-term-care-insurance" },
-  { label: "About",                  href: "/about" },
-  { label: "Contact",                href: "/contact" },
+  { label: "Services", href: "/services" },
+  { label: "About",    href: "/about" },
+  { label: "Contact",  href: "/contact" },
 ];
 
 const SERVICE_DROPDOWN = [
-  { label: "Dementia Care",                    href: "/services/alzheimers-care" },
-  { label: "Personal Care",                    href: "/services#personal-care" },
-  { label: "Companion Care",                   href: "/services#respite" },
-  { label: "Concierge Services",               href: "/services/concierge" },
+  { label: "Alzheimer's & Dementia Care",         href: "/services/alzheimers-care" },
+  { label: "Live-In Care",                        href: "/services/live-in-care" },
+  { label: "Private Pay",                         href: "/services/private-pay" },
+  { label: "Long-Term Care Insurance",            href: "/services/long-term-care-insurance" },
+  { label: "Concierge Services",                  href: "/services/concierge" },
   { label: "Care in Assisted Living Communities", href: "/services/assisted-living" },
-  { label: "Respite Care",                     href: "/services#respite" },
-  { label: "Overnight Care",                   href: "/services#overnight" },
+  { label: "Personal Care",                       href: "/services#personal-care" },
+  { label: "Overnight Care",                      href: "/services#overnight" },
+  { label: "Respite Care",                        href: "/services#respite" },
 ];
 
 export default function Navbar() {
@@ -76,7 +74,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop nav links */}
-            <ul className="hidden lg:flex items-center gap-6 list-none" role="list">
+            <ul className="hidden lg:flex items-center gap-6 list-none whitespace-nowrap" role="list">
               {TOP_NAV_LINKS.map((link) =>
                 link.label === "Services" ? (
                   <li key={link.href} ref={dropdownRef} className="relative">
@@ -122,7 +120,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href="tel:+15086653872"
-                className="text-sm font-semibold text-primary flex items-center gap-1.5"
+                className="text-sm font-semibold text-primary flex items-center gap-1.5 whitespace-nowrap"
               >
                 📞 (508) 665-3872
               </a>

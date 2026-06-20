@@ -25,7 +25,7 @@ const BASE_URL = "https://honorhome.care";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Honor Home Care | In-Home Dementia Care — Massachusetts",
+    default: "Honor Home Care | In-Home Dementia Care You Can Trust",
     template: "%s | Honor Home Care",
   },
   description:
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   formatDetection: { telephone: true, email: true, address: true },
   alternates: { canonical: BASE_URL },
   openGraph: {
-    title: "Honor Home Care | In-Home Dementia Care — Massachusetts",
+    title: "Honor Home Care | In-Home Dementia Care You Can Trust",
     description:
       "Person-centered, specialist in-home dementia care across Greater Boston and MetroWest MA. Certified caregivers, RN supervision, flexible private-pay options. Serving families since 2013.",
     url: BASE_URL,
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Honor Home Care | In-Home Dementia Care — Massachusetts",
+    title: "Honor Home Care | In-Home Dementia Care You Can Trust",
     description:
       "Specialist in-home dementia care across Greater Boston and MetroWest MA. Serving families since 2013.",
     images: [`${BASE_URL}/images/caretaker-elderly.jpg`],
