@@ -31,12 +31,12 @@ const certifications = [
 ];
 
 const milestones = [
-  { year: "2013", event: "Honor Home Care founded in Waltham, MA by Dr. Sarah Mitchell and Marcus Johnson, RN — after seeing firsthand the gap in specialist dementia home care across MetroWest." },
-  { year: "2015", event: "Became a certified partner of the Alzheimer's Association Massachusetts Chapter. Launched our proprietary 80-hour caregiver certification program." },
-  { year: "2017", event: "Expanded service coverage across the Greater Boston area — including Newton, Cambridge, Lexington, Framingham, and Wellesley." },
-  { year: "2019", event: "Expanded our care model to include live-in care, concierge services, and support inside assisted living communities — serving more Massachusetts families across more care settings." },
-  { year: "2021", event: "Reached 300 Massachusetts families served. Introduced 24/7 RN on-call support and launched the HonorHome family app." },
-  { year: "2024", event: "Named Best Dementia Care Provider in Greater Boston. Now serving 500+ families across Middlesex, Norfolk, and Worcester counties in Massachusetts." },
+  { year: "2013", event: "Honor Home Care was founded in Waltham, MA by Mariam Namuleme — a dementia specialist caregiver who saw firsthand the gap in quality in-home dementia care for Massachusetts families. What began as one caregiver's mission is now a team of 10+ dedicated dementia care specialists." },
+  { year: "2015", event: "We launched our proprietary 80-hour Dementia Caregiver Certification — a rigorous in-house training program built around the real challenges of Alzheimer's and dementia care, going well beyond state licensing requirements." },
+  { year: "2017", event: "Our reach grew as more Massachusetts families turned to us for support — extending care into new communities across the Greater Boston area and MetroWest." },
+  { year: "2019", event: "We expanded our services to include live-in care, concierge support, and care inside assisted living communities — meeting families wherever they needed us." },
+  { year: "2021", event: "We strengthened our care model with around-the-clock clinical support and new tools to keep families better informed and connected to their loved one's care." },
+  { year: "2024", event: "We continue to grow — guided by the same values we started with: dignity, consistency, and genuinely personal care for every family we serve." },
 ];
 
 const partners = [
@@ -52,7 +52,7 @@ export default function AboutPage() {
       <PageHero
         label="Our Story"
         heading="Built on Dignity, Driven by Compassion"
-        subtext="Founded in Waltham, MA in 2013 — by caregivers who knew firsthand what Massachusetts families needed."
+        subtext="Founded in 2013 by Mariam Namuleme, a dementia specialist caregiver — now a team of 10+ caring for families across Greater Boston and MetroWest MA."
         crumbs={[{ label: "About" }]}
       />
 
@@ -81,22 +81,31 @@ export default function AboutPage() {
                 Every Massachusetts Family Deserves Expert Dementia Care at Home
               </h2>
               <p className="text-[15px] text-base-content/60 leading-relaxed mb-4">
-                We believe that familiar surroundings, consistent caregivers, and
-                individualized attention make a profound difference in the quality of
-                life for someone living with dementia — and that this level of care
-                should be accessible to every family in Massachusetts.
+                Honor Home Care was founded in 2013 by Mariam Namuleme, a dementia
+                specialist caregiver who spent years working directly with families
+                living through Alzheimer&apos;s and dementia. She saw what families
+                actually needed — and what the home care industry wasn&apos;t providing.
               </p>
-              <p className="text-[15px] text-base-content/60 leading-relaxed mb-8">
-                Honor Home Care was built to close the gap between what Greater Boston
-                and MetroWest families needed and what the homecare industry was offering:
-                deep specialist training, genuine caregiver consistency, and a care model
-                centered around the person — not the provider&apos;s convenience.
+              <p className="text-[15px] text-base-content/60 leading-relaxed mb-6">
+                What started as one caregiver&apos;s mission has grown into a team of
+                10+ specialist caregivers, all trained in our proprietary 80-hour
+                dementia certification program and supervised by experienced clinicians.
               </p>
+              <blockquote className="border-l-2 border-primary pl-5 mb-8">
+                <p className="text-[14px] italic text-base-content/70 leading-relaxed">
+                  &ldquo;I started this because I knew what families were going through.
+                  Every person with dementia deserves a caregiver who truly understands
+                  them — not just someone filling a shift.&rdquo;
+                </p>
+                <p className="text-[12px] font-semibold text-primary mt-2">
+                  — Mariam Namuleme, Founder
+                </p>
+              </blockquote>
               <div className="stats stats-horizontal border border-base-300 bg-base-100 shadow-none w-full">
                 {[
-                  { n: "500+", l: "MA families served" },
-                  { n: "98%",  l: "Satisfaction rate" },
-                  { n: "12+",  l: "Years in MA" },
+                  { n: "2013", l: "Founded in Waltham, MA" },
+                  { n: "10+",  l: "Dementia specialists" },
+                  { n: "80h",  l: "Caregiver certification" },
                 ].map((s) => (
                   <div key={s.l} className="stat place-items-center py-5">
                     <div className="stat-value font-serif text-[28px] text-base-content">{s.n}</div>
@@ -115,7 +124,7 @@ export default function AboutPage() {
           <div className="max-w-2xl mb-14">
             <p className="text-[11px] font-semibold tracking-[3px] uppercase text-primary mb-4">Our Journey</p>
             <h2 className="font-serif text-[clamp(30px,4vw,46px)] text-base-content leading-[1.1]">
-              A Decade of Care Across Massachusetts
+              Our Journey in Care
             </h2>
           </div>
 

@@ -90,7 +90,7 @@ const localBusinessSchema = {
   description:
     "Specialist in-home dementia and Alzheimer's care across Greater Boston and MetroWest Massachusetts. Licensed, insured, and serving families since 2013.",
   telephone: "+1-508-665-3872",
-  email: "care@honorhome.care",
+  email: "info@honorhome.care",
   foundingDate: "2013",
   address: {
     "@type": "PostalAddress",

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import Testimonials from "@/components/Testimonials";
+import ReviewsSlider from "@/components/ReviewsSlider";
 import CtaBanner from "@/components/CtaBanner";
+import { getGoogleReviews } from "@/lib/reviews";
 import { townGroups, towns } from "@/lib/towns";
 
 export const metadata: Metadata = {
@@ -50,7 +51,8 @@ const featuredServices = [
 ];
 
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { reviews, overallRating, totalRatings } = await getGoogleReviews();
   return (
     <>
       <Hero />
@@ -234,7 +236,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Testimonials />
+      {/* ── Google Reviews ── */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <p className="text-[11px] font-semibold tracking-[3px] uppercase text-primary mb-3">What Families Say</p>
+            <h2 className="font-serif text-[clamp(28px,4vw,44px)] text-base-content leading-tight max-w-lg">
+              Real words from the families we serve
+            </h2>
+          </div>
+          <ReviewsSlider reviews={reviews} overallRating={overallRating} totalRatings={totalRatings} placeId={process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID} />
+        </div>
+      </section>
       <CtaBanner />
     </>
   );

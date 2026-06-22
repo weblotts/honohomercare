@@ -20,7 +20,7 @@ export default function Footer() {
               +1 (508) 665-3872
             </a>
             <p className="text-xs mt-1">Available 24/7</p>
-            <p className="text-xs mt-3">care@honorhome.care</p>
+            <p className="text-xs mt-3">info@honorhome.care</p>
             <p className="text-xs mt-1">738 Main St, Waltham MA 02451</p>
           </div>
 

@@ -34,7 +34,7 @@ export default function Contact() {
             <div className="flex flex-col gap-5">
               {[
                 { label: "Phone",   value: "+1 (508) 665-3872",         note: "Available 24/7" },
-                { label: "Email",   value: "care@honorhome.care",        note: "Reply within 2 hours" },
+                { label: "Email",   value: "info@honorhome.care",        note: "Reply within 2 hours" },
                 { label: "Address", value: "738 Main St, Waltham, MA 02451", note: "Greater Boston & MetroWest" },
               ].map((d) => (
                 <div key={d.label}>
