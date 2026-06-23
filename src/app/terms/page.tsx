@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: "Terms of Service — Honor Home Care",
   description: "The terms governing your use of the Honor Home Care, LLC website and the information presented on it.",
   alternates: { canonical: "https://honorhome.care/terms" },
+  openGraph: {
+    title: "Terms of Service — Honor Home Care",
+    description: "The terms governing your use of the Honor Home Care website.",
+    url: "https://honorhome.care/terms",
+  },
+  robots: { index: false },
 };
 
 const sections = [

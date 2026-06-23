@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Concierge Home Care Services in Massachusetts | Honor Home Care",
@@ -11,7 +12,19 @@ export const metadata: Metadata = {
     title: "Concierge Care Services — Massachusetts | Honor Home Care",
     description: "Premium non-medical support for seniors who want extra. Serving Greater Boston and MetroWest MA.",
     url: "https://honorhome.care/services/concierge",
+    images: [{ url: "https://honorhome.care/images/caretaker-elderly.jpg", width: 1200, height: 630, alt: "Concierge home care services in Massachusetts" }],
   },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Concierge Home Care Services",
+  description: "Premium non-medical concierge support for seniors and families across Massachusetts — errands, appointments, companionship, family updates, and personalized care coordination.",
+  url: "https://honorhome.care/services/concierge",
+  provider: { "@type": "LocalBusiness", name: "Honor Home Care", url: "https://honorhome.care", telephone: "+1-508-665-3872" },
+  areaServed: { "@type": "State", name: "Massachusetts" },
+  serviceType: "Concierge Senior Care",
 };
 
 const services = [
@@ -28,6 +41,7 @@ const services = [
 export default function ConciergePage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
       <PageHero
         label="Concierge Care"
         heading="Premium Support That Goes Beyond the Basics"

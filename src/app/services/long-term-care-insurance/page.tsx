@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Long-Term Care Insurance for Home Care | Honor Home Care Massachusetts",
@@ -11,7 +12,19 @@ export const metadata: Metadata = {
     title: "Using Long-Term Care Insurance for Home Care — Massachusetts",
     description: "We handle the paperwork with your insurer so your family can focus on care. Serving Greater Boston and MetroWest MA.",
     url: "https://honorhome.care/services/long-term-care-insurance",
+    images: [{ url: "https://honorhome.care/images/caretaker-elderly.jpg", width: 1200, height: 630, alt: "Long-term care insurance for home care in Massachusetts" }],
   },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Long-Term Care Insurance Support for Home Care",
+  description: "Honor Home Care helps Massachusetts families use their long-term care insurance to cover in-home care. We manage claims, documentation, and billing directly with insurers.",
+  url: "https://honorhome.care/services/long-term-care-insurance",
+  provider: { "@type": "LocalBusiness", name: "Honor Home Care", url: "https://honorhome.care", telephone: "+1-508-665-3872" },
+  areaServed: { "@type": "State", name: "Massachusetts" },
+  serviceType: "In-Home Care with Long-Term Care Insurance",
 };
 
 const whatToCheck = [
@@ -34,6 +47,7 @@ const howWeHelp = [
 export default function LongTermCareInsurancePage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
       <PageHero
         label="Long-Term Care Insurance"
         heading="Your Policy May Cover In-Home Care — We'll Help You Use It"

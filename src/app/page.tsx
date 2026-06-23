@@ -125,15 +125,6 @@ export default async function HomePage() {
                 MetroWest with a care model endorsed by the Alzheimer&apos;s Association
                 and built around each person — not a generic schedule.
               </p>
-              <blockquote className="border-l-2 border-primary pl-5 mb-8">
-                <p className="text-[14px] italic text-base-content/70 leading-relaxed">
-                  &ldquo;Every person living with dementia deserves to be treated with
-                  respect, patience, and individualized attention.&rdquo;
-                </p>
-                <p className="text-[12px] font-semibold text-primary mt-2">
-                  — Dr. Sarah Mitchell, Medical Director
-                </p>
-              </blockquote>
               <Link href="/about"
                 className="btn btn-primary rounded-md text-white font-semibold normal-case btn-sm px-6">
                 Our story →

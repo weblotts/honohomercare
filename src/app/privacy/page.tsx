@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: "Privacy Policy — Honor Home Care",
   description: "How Honor Home Care, LLC collects, uses, and protects the personal and health information of the Massachusetts families we serve.",
   alternates: { canonical: "https://honorhome.care/privacy" },
+  openGraph: {
+    title: "Privacy Policy — Honor Home Care",
+    description: "How Honor Home Care collects, uses, and protects the personal information of Massachusetts families.",
+    url: "https://honorhome.care/privacy",
+  },
+  robots: { index: false },
 };
 
 const sections = [

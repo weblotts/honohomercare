@@ -45,13 +45,6 @@ export default function Contact() {
               ))}
             </div>
 
-            <blockquote className="mt-10 border-l-2 border-purple pl-4">
-              <p className="text-sm italic text-gray-500 leading-relaxed">
-                &ldquo;There is no commitment, no sales pitch — just a caring conversation with someone
-                who understands what you&apos;re going through.&rdquo;
-              </p>
-              <p className="text-xs font-semibold text-purple mt-2">— Elena Vasquez, Family Support Coordinator</p>
-            </blockquote>
           </div>
 
           {/* Form */}

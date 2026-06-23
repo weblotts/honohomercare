@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Private Pay Home Care in Massachusetts | Honor Home Care",
@@ -11,7 +12,19 @@ export const metadata: Metadata = {
     title: "Private Pay Home Care — Massachusetts | Honor Home Care",
     description: "Premium, flexible in-home care with no program restrictions. Hourly or live-in options across Greater Boston and MetroWest MA.",
     url: "https://honorhome.care/services/private-pay",
+    images: [{ url: "https://honorhome.care/images/caretaker-elderly.jpg", width: 1200, height: 630, alt: "Private pay home care in Massachusetts" }],
   },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Private Pay Home Care",
+  description: "Flexible, no-waitlist private-pay home care in Massachusetts. Hourly and live-in options with no program restrictions.",
+  url: "https://honorhome.care/services/private-pay",
+  provider: { "@type": "LocalBusiness", name: "Honor Home Care", url: "https://honorhome.care", telephone: "+1-508-665-3872" },
+  areaServed: { "@type": "State", name: "Massachusetts" },
+  serviceType: "Private Pay Home Care",
 };
 
 const whatFamiliesPay = [
@@ -33,6 +46,7 @@ const advantages = [
 export default function PrivatePayPage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
       <PageHero
         label="Private Pay Care"
         heading="Flexible, Premium Home Care — On Your Terms"

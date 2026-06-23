@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Live-In Home Care in Massachusetts | Honor Home Care",
@@ -11,7 +12,19 @@ export const metadata: Metadata = {
     title: "Live-In Home Care — Massachusetts | Honor Home Care",
     description: "Around-the-clock in-home support with a live-in caregiver. Serving Greater Boston and MetroWest MA.",
     url: "https://honorhome.care/services/live-in-care",
+    images: [{ url: "https://honorhome.care/images/caretaker-elderly.jpg", width: 1200, height: 630, alt: "Live-in home care for seniors in Massachusetts" }],
   },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Live-In Home Care",
+  description: "24-hour live-in care for seniors in Massachusetts. A dedicated caregiver stays in your home providing overnight supervision, daily support, and peace of mind.",
+  url: "https://honorhome.care/services/live-in-care",
+  provider: { "@type": "LocalBusiness", name: "Honor Home Care", url: "https://honorhome.care", telephone: "+1-508-665-3872" },
+  areaServed: { "@type": "State", name: "Massachusetts" },
+  serviceType: "Live-In Home Care",
 };
 
 const included = [
@@ -36,6 +49,7 @@ const whoItHelps = [
 export default function LiveInCarePage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
       <PageHero
         label="Live-In Care"
         heading="Around-the-Clock Support in the Comfort of Home"

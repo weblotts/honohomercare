@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Alzheimer's & Dementia Home Care in Massachusetts | Honor Home Care",
@@ -11,7 +12,19 @@ export const metadata: Metadata = {
     title: "Alzheimer's & Dementia Home Care — Massachusetts | Honor Home Care",
     description: "Trusted dementia care at home. Certified caregivers, structured routines, family support — serving MA families at every stage.",
     url: "https://honorhome.care/services/alzheimers-care",
+    images: [{ url: "https://honorhome.care/images/caretaker-elderly.jpg", width: 1200, height: 630, alt: "Alzheimer's and dementia home care in Massachusetts" }],
   },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Alzheimer's & Dementia Home Care",
+  description: "Specialist in-home Alzheimer's and dementia care across Greater Boston and MetroWest Massachusetts. Trained caregivers, structured routines, and family communication.",
+  url: "https://honorhome.care/services/alzheimers-care",
+  provider: { "@type": "LocalBusiness", name: "Honor Home Care", url: "https://honorhome.care", telephone: "+1-508-665-3872" },
+  areaServed: { "@type": "State", name: "Massachusetts" },
+  serviceType: "Dementia Home Care",
 };
 
 const warningSignsList = [
@@ -45,6 +58,7 @@ const careApproach = [
 export default function AlzheimersCarePage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
       <PageHero
         label="Alzheimer's & Dementia Care"
         heading="Expert Memory Care, Delivered at Home"

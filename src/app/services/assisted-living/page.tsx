@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Extra Care Inside Assisted Living Communities | Honor Home Care Massachusetts",
@@ -11,7 +12,19 @@ export const metadata: Metadata = {
     title: "Extra One-on-One Care in Assisted Living — Massachusetts | Honor Home Care",
     description: "Supplemental in-room care for assisted living residents who need more personal attention. Serving Greater Boston and MetroWest MA.",
     url: "https://honorhome.care/services/assisted-living",
+    images: [{ url: "https://honorhome.care/images/caretaker-elderly.jpg", width: 1200, height: 630, alt: "Extra care inside assisted living communities in Massachusetts" }],
   },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Care Inside Assisted Living Communities",
+  description: "Additional one-on-one support for residents inside assisted living communities across Massachusetts — dementia support, morning/evening routines, companionship, and safety monitoring.",
+  url: "https://honorhome.care/services/assisted-living",
+  provider: { "@type": "LocalBusiness", name: "Honor Home Care", url: "https://honorhome.care", telephone: "+1-508-665-3872" },
+  areaServed: { "@type": "State", name: "Massachusetts" },
+  serviceType: "Supplemental Assisted Living Care",
 };
 
 const services = [
@@ -35,6 +48,7 @@ const whyFamiliesChooseThis = [
 export default function AssistedLivingPage() {
   return (
     <>
+      <JsonLd data={serviceSchema} />
       <PageHero
         label="Care in Assisted Living"
         heading="Extra One-on-One Care Inside Assisted Living Communities"

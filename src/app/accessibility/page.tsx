@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: "Accessibility Statement — Honor Home Care",
   description: "Honor Home Care, LLC is committed to making its website accessible to all visitors, including people with disabilities.",
   alternates: { canonical: "https://honorhome.care/accessibility" },
+  openGraph: {
+    title: "Accessibility Statement — Honor Home Care",
+    description: "Honor Home Care is committed to making its website accessible to all visitors, including people with disabilities.",
+    url: "https://honorhome.care/accessibility",
+  },
+  robots: { index: false },
 };
 
 const sections = [

@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const team = [
-  { photo: "https://i.pravatar.cc/400?img=5",  name: "Dr. Sarah Mitchell",  role: "Medical Director",             bio: "Board-certified geriatrician with 20 years specializing in Alzheimer's and dementia. Leads clinical oversight and care standards.", creds: ["MD, FACP", "Geriatrics Board", "AAIC Member"] },
   { photo: "https://i.pravatar.cc/400?img=12", name: "Marcus Johnson, RN",  role: "Director of Care Operations",  bio: "Registered nurse who designs individualized care plans and supervises our caregiver teams across Massachusetts.", creds: ["RN, BSN", "CDP Certified"] },
   { photo: "https://i.pravatar.cc/400?img=48", name: "Elena Vasquez, MSW",  role: "Family Support Coordinator",   bio: "Licensed social worker guiding families through the practical and emotional challenges of caring for someone with dementia.", creds: ["LCSW", "Dementia Coach"] },
   { photo: "https://i.pravatar.cc/400?img=33", name: "Dr. James Okafor",   role: "Head of Training & Education", bio: "Neuropsychologist who developed our 80-hour caregiver certification curriculum.", creds: ["PhD, Neuropsychology", "ABPP"] },
