@@ -7,6 +7,7 @@ import Link from "next/link";
 const TOP_NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "About",    href: "/about" },
+  { label: "Careers",  href: "/careers" },
   { label: "Contact",  href: "/contact" },
 ];
 
